@@ -1,33 +1,112 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 62% 100%;
+    --foreground: 0 67% 0%;
+    --muted: 0 17% 94%;
+    --muted-foreground: 0 0% 36%;
+    --popover: 0 62% 100%;
+    --popover-foreground: 0 67% 0%;
+    --card: 0 62% 100%;
+    --card-foreground: 0 67% 0%;
+    --border: 0 10% 93%;
+    --input: 0 10% 93%;
+    --primary: 0 0% 74%;
+    --primary-foreground: 0 0% 14%;
+    --secondary: 0 0% 74%;
+    --secondary-foreground: 0 0% 14%;
+    --accent: 0 0% 74%;
+    --accent-foreground: 0 0% 14%;
+    --destructive: 9 94% 28%;
+    --destructive-foreground: 9 94% 88%;
+    --ring: 0 0% 74%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 30% 97%;
+    --muted: 0 0% 7.54%;
+    --muted-foreground: 0 0% 41.85%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 30% 97%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 30% 97%;
+    --border: 0 10% 10%;
+    --input: 0 10% 10%;
+    --primary: 0 0% 74%;
+    --primary-foreground: 0 0% 14%;
+    --secondary: 0 0% 74%;
+    --secondary-foreground: 0 0% 14%;
+    --accent: 0 0% 74%;
+    --accent-foreground: 0 0% 14%;
+    --destructive: 9 94% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 0 0% 74%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.titlebar {
+  height: 30px;
+  background: #329ea3;
+  user-select: none;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.titlebar-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+.titlebar-button:hover {
+  background: #5bbec3;
+}
+
+@font-face {
+  font-family: "samsung_one";
+  src: url("https://cdn.jsdelivr.net/gh/Aaron-p-saji/fonts@main/samsungone-webfont/SamsungOne-400.woff")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "samsung_one";
+  src: url("https://cdn.jsdelivr.net/gh/Aaron-p-saji/fonts@main/samsungone-webfont/SamsungOne-700.woff")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "samsung_sharp";
+  src: url("https://cdn.jsdelivr.net/gh/Aaron-p-saji/fonts@main/samsungone-webfont/SamsungSharpSans-Bold.woff")
+    format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "abc_gintonord";
+  src: url("https://cdn.jsdelivr.net/gh/Aaron-p-saji/fonts@main/ginto-font-family-1719472120-0/ABCGintoNord-Ultra-Trial-BF651b7b783d44c.otf")
+    format("otf");
+  font-weight: 800;
+  font-style: normal;
 }

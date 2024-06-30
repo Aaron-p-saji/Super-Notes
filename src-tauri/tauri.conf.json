@@ -11,8 +11,12 @@
     "version": "0.1.0"
   },
   "tauri": {
+    "macOSPrivateApi": true,
     "allowlist": {
-      "all": false
+      "all": false,
+      "window": {
+        "all": true
+      }
     },
     "bundle": {
       "active": true,
@@ -58,8 +62,12 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "S NOtes",
-        "width": 800
+        "hiddenTitle": true,
+        "title": "S Notes",
+        "width": 800,
+        "decorations": false,
+        "transparent": true,
+        "titleBarStyle": "Transparent"
       }
     ]
   }
