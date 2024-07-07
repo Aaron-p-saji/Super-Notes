@@ -4,12 +4,6 @@ import "./globals.css";
 import { WebviewWindow, appWindow } from "@tauri-apps/api/window";
 import { ThemeProvider } from "@/provider/theme-provider";
 import { Minus, X } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
@@ -40,11 +34,11 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="bg-[#fff] dark:bg-[#000] rounded-md overflow-hidden flex flex-col">
+          <div className="bg-[#fff] rounded-md overflow-hidden flex flex-col">
             <div
               className="h-8 flex flex-row justify-between items-center pl-2 bg-transparent rounded-md "
               data-tauri-drag-region
